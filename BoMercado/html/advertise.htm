@@ -1,0 +1,167 @@
+
+<!--content-->
+	<div id="main_content" >
+	<!-- START BLOCK : DONE -->
+		<div id="Modal" class="done-msg">
+		  <!-- Modal content -->
+		  <div class="done-msg-content">
+			<p class="done_title">Pabien!</p>
+			<p id="done">Bo producto a wordo poni riba Bo mercado</p>
+			
+		  </div>
+		</div>
+<!-- END BLOCK : DONE --> 
+		<div class="container">
+			<div class="big_title">Bo advertensia</div>
+			<!-- START BLOCK : warning -->
+			<div id="warning_box">
+				<!-- START BLOCK : not_image -->
+				<span class="warning">*Potret so por worda upload</span><br>
+				<!-- END BLOCK : not_image -->
+				<!-- START BLOCK : image_exist -->
+				<span class="warning">*E potret(nan) ta existi kaba</span><br>
+				<!-- END BLOCK : image_exist -->
+				<!-- START BLOCK : image_size -->
+				<span class="warning">*E potret(nan) su size ta mucho grandi</span><br>
+				<!-- END BLOCK : image_size -->
+				<!-- START BLOCK : image_format -->
+				<span class="warning">*E potret(nan) su format mag ta solamente jpg, png, jpeg</span><br>
+				<!-- END BLOCK : image_format -->
+				<!-- START BLOCK : image_upload -->
+				<span class="warning">*A surgi un problema pa upload e potret riba e server</span><br>
+				<!-- END BLOCK : image_upload -->
+				<!-- START BLOCK : empty_name -->
+				<span class="warning">*Mester yena un titulo</span><br>
+				<!-- END BLOCK : empty_name -->
+				<!-- START BLOCK : empty_cate -->
+				<span class="warning">*Mester kies un catergoria</span><br>
+				<!-- END BLOCK : empty_cate -->
+				<!-- START BLOCK : empty_condition -->
+				<span class="warning">*Mester kies un condition</span><br>
+				<!-- END BLOCK : empty_condition -->
+				<!-- START BLOCK : empty_description -->
+				<span class="warning">*Mester pone un description</span><br>
+				<!-- END BLOCK : empty_description -->
+				<!-- START BLOCK : empty_transfer -->
+				<span class="warning">*Mester pone un manera di entrega</span><br>
+				<!-- END BLOCK : empty_transfer -->
+				<!-- START BLOCK : empty_country -->
+				<span class="warning">*Mester pone bo pias</span><br>
+				<!-- END BLOCK : empty_country -->
+				<!-- START BLOCK : empty_price -->
+				<span class="warning">*Mester kies un manera pa prijs</span><br>
+				<!-- END BLOCK : empty_price -->
+				<!-- START BLOCK : empty_price_ex -->
+				<span class="warning">*Mester jena un kantidat pa prijs</span><br>
+				<!-- END BLOCK : empty_price_ex -->
+			</div>
+			<!-- END BLOCK : warning -->
+				<form id="form_adv" action="" method="post" enctype="multipart/form-data">
+					 <fieldset class="fieldset_adv">
+						<legend>1. Titulo y Caterisica nan</legend>
+						<label for="title">Titulo</label><span class="mester"> *Mester</span><br>
+						<input type="text" name="titulo" id="title" value="{titulo}"></input><br>
+						<label for="title2">Categoria</label><span class="mester"> *Mester</span><br>
+						<select name="category" class="select_ad" id="title2">
+							<option value="">Kies un categoria...</option>
+							<!-- START BLOCK : CATEGORY -->
+							<option value="{id}">{title}</option>
+							<!-- END BLOCK : CATEGORY -->
+						</select><br>
+						<label for="title3">Condition</label><span class="mester"> *Mester</span><br>
+						<select name="condition" class="select_ad" id="title3">
+							<option value="">Kies un condition...</option>
+							<option value="nobo">Nobo</option>
+							<option value="tiki husa">Tiki husa</option>
+							<option value="husa">Husa</option>
+						</select>
+					</fieldset>
+					<fieldset class="fieldset_adv">
+						<legend>2. Pone potret</legend>
+						<p>Kies potretnan di bo producto:</p>
+						<input class="upload_img_btn" id="files" type="file" name="file[]" id="file_to_upload" multiple ></input><div class="tooltip"><span class="tooltiptext">Pa kies mas cu un potret primi Ctrl e selecta e potretnan. Potret size no mag ta mas cu 10MB</span></div><br>
+					</fieldset>
+					<fieldset class="fieldset_adv">
+						<legend>3. Description</legend>
+						<label for="description">Description</label><span class="mester"> *Mester</span><br>
+						<textarea id="description" name="description"rows="5" placeholder="Pone aki nan un description di bo producto." cols="50">{description}</textarea>
+					</fieldset>
+					<fieldset class="fieldset_adv">
+						<legend>4. Buske of Mande</legend>
+						<label for="deliverd">Manera di entrega</label></span><br>
+						<select name="transfer" class="select_ad" id="deliverd">
+							<option value="">Kies un option...</option>
+							<option value="buske">Buske</option>
+							<option value="mande">Ta mande</option>
+							<option value="busca of mande">Busca of Mande</option>
+						</select>
+					</fieldset>
+					<fieldset class="fieldset_adv">
+						<legend>5. Information di contacto y preferencia</legend>
+						<p>Preferencia di contacto</p>
+						<input type="checkbox" name="emailcheck" class="check_reg" id="email" checked><label for="email">E-mail</label></input>
+						<input type="checkbox" name="callcheck" class="check_reg" id="yama"><label for="yama">Yama</label></input><br>
+						<label id="country">Bo pais</label></label><span class="mester"> *Mester</span><br>
+						<select class="select_reg" name="country">
+							<option value="">Kies un pais....</option>
+							<!-- START BLOCK : COUNTRY -->
+							<option value="{id_c}">{country} </option>
+							<!-- END BLOCK : COUNTRY -->
+						</select><br>
+						<label for="phone">Telefoon</label><br>
+						<input type="number" name="phone" id="phone" value="{phone}"></input><br>
+					</fieldset>
+					<fieldset class="fieldset_adv">
+						<legend>6. Prijs</legend>
+						<input class="adv_radio" type="radio" onclick="check(this,1)" name="radio" value="puntra" id="ask_prijs"><label for="ask_prijs" class="rad_title">Punrta pa prijs</label><div class="tooltip"><span class="tooltiptext">E persona mester puntra pa prijs.</span></div></input><br><br>
+						<input class="adv_radio" type="radio" onclick="check(this,2)" name="radio" value="exacto" id="ex_prijs"><label for="ex_prijs" class="rad_title">Prijs exacto</label></input><div class="tooltip"><span class="tooltiptext">E prijs cu bo kier haña pa bo producto.</span></div>
+						<input type="number" id="ex_prijs_nr"  name="ex_prijs_nr" class="input_number" step="any"></input><br>
+						<input class="adv_radio" type="radio" onclick="check(this,3)" name="radio" value="findishi" id="offer"><label for="offer" class="rad_title">Findishi</label><div class="tooltip"><span class="tooltiptext">Bo kier pa e personanan pone un oferta riba bo producto.</span></div></input><br><br>
+						<input class="adv_radio" type="radio" onclick="check(this,4)" name="radio" value="findishi_prijs" id="of_prijs"><label for="of_prijs" class="rad_title">Findishi ta cuminsa na</label><div class="tooltip"><span class="tooltiptext">Bo kier pa e oferta cuminsa na e prijs cu bo kier.</span></div></input> 
+						<input type="number" id="offer_prijs_nr" name="offer_prijs_nr" class="input_number" step="any"></input><br>
+					</fieldset>
+					<input type="submit" name="submit" class="btn_adv"></input>
+				</form>
+		</div>
+	</div>
+<script>
+
+
+
+
+
+var numExPrs = document.getElementById("ex_prijs_nr");
+var numOfPrs = document.getElementById("offer_prijs_nr");
+
+numExPrs.setAttribute('disabled', 'true');
+numOfPrs.setAttribute('disabled', 'true');
+						
+function check(x, n){
+	if (x.checked == true && n == 1){
+		numExPrs.setAttribute('disabled', 'true');
+		numOfPrs.setAttribute('disabled', 'true');
+		numExPrs.value = "";
+		numOfPrs.value = "";
+	}else if (x.checked == true && n == 2){
+		if(numExPrs.disabled == true){
+			numOfPrs.value = "";
+			numExPrs.removeAttribute('disabled');
+		}
+		numOfPrs.setAttribute('disabled', 'true');
+	}else if (x.checked == true && n == 3){
+		numExPrs.setAttribute('disabled', 'true');
+		numOfPrs.setAttribute('disabled', 'true');
+		numExPrs.value = "";
+		numOfPrs.value = "";
+	}else if (x.checked == true && n == 4){
+		if(numOfPrs.disabled == true){
+			numExPrs.value = "";
+			numOfPrs.removeAttribute('disabled');
+		}
+		numExPrs.setAttribute('disabled', 'true');
+	}
+}
+</script>
+
+	
+	

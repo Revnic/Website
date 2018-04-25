@@ -1,0 +1,64 @@
+
+<!--content-->
+	<div id="main_content" >
+		<div class="container">
+			<div class="big_title">BON BINI</div>
+			<!-- START BLOCK : warning_box -->
+			<div id="warning_box">
+				<!-- START BLOCK : warning -->
+				<span class="warning">*E-mail cu password no ta cuadra cu otro</span><br>
+				<!-- END BLOCK : warning -->
+				<!-- START BLOCK : activa -->
+				<span class="warning">*Bo account no ta activa. <br> 
+					Porfabor check den bo inbox of spam-box pa e mail di activation, of yena bo email pa manda un di nobo.
+				</span><br>
+				<span class="warning">
+					<form action="index.php?id=2" method="post">
+					<input type="text" name="email" id="email">
+					<input class="btn_login" type="submit" name="submit_remail" value="Manda un nobo">
+					</form>
+				</span><br>
+				<!-- END BLOCK : activa -->
+			</div>
+			<!-- END BLOCK : warning_box -->
+			
+			<div class="box">
+				<h1 class="h1_login">Login</h1>
+				<form action="index.php?id=2" method="post">
+					<label for="email">E-mail</label><br>
+					<input type="text" name="email" id="email"><br>
+					<label for="password">Password</label><br>
+					<input type="password" name="password" id="password"><br>
+					<input type="checkbox"  onclick="showPassw()" id="show_passw"><label for="show_passw">Mustra password</label></input><br>
+					<input class="btn_login" type="submit" name="submit" value="login">
+					<a id="lubida_password" href="index.php?id=3">Lubida password?</a>
+				</form>
+			</div>
+<script>
+
+var passW = document.getElementById('show_passw');
+var passWIn = document.getElementById('password');
+
+function showPassw(){
+	if(passW.checked){
+		passWIn.setAttribute("type", "text");
+	}else{
+		passWIn.setAttribute("type", "password");
+	}
+}
+
+</script>
+			<div class = "vr"></div>
+			<div class="box">
+				<h1 class="h1_login">Registracion</h1>
+				<p>Pa bo por drenta, bo mester tin un account di Bo Mercado.<br><br> E ora bo por:</p>
+				<p id="list"> 
+					- Pone advertencia<br>
+					- Ofrece<br>
+					- Keda pendiento di bo oferta nan<br>
+					- Maneha bo advertencia<br>
+				</p>
+				<a href="index.php?id=4" id="reg_button">Registra</a>
+			</div>
+		</div>
+	</div>

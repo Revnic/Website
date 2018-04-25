@@ -1,0 +1,52 @@
+<!--search bar-->
+	<div id="search_bar" >
+		<div class="container">
+			<a id="ad_button" href="index.php?id=5">Pone bo advertensia</a>
+			<form class="search" action="index.php?id=6">
+				<select class="search_select" name="category">
+					<option value="*">Tur categoria..</option>
+					<option value="volvo">Volvo</option>
+					<option value="saab">Saab</option>
+					<option value="fiat">Fiat</option>
+					<option value="audi">Audi boeki</option>
+				</select>
+				<select class="search_select" name="country">
+					<option value="*">ABC</option>
+					<option value="Aruba">Aruba </option>
+					<option value="Bonairu">Bonairu</option>
+					<option value="Korsów">Korsow</option>
+				</select>
+				<input class="search_button"type="submit" value="Busca">
+			</form>
+		</div>
+	</div>
+<!--content-->
+	<div id="main_content" >
+		<div class="container">
+			<div class="big_title">Bo account</div>
+				<form method="post" action="">
+					<fieldset class="fieldset_account">
+						<legend>Bo datos</legend>
+						<label>Bo nomber</label><br>
+						<input type="text"  name="name" value=""></input><br>
+						<label>Nomber di bo caya</label><br>
+						<input type="text" name="street-name" value=""></input><br>
+						<label>Number di bo telefoon</label><br>
+						<input type="number" name="phone" value=""></input><br>
+						<input class="account_btn" type="submit" value="Warda"></input>
+					</fieldset>
+				</form>
+				<form method="post" action="">
+					<fieldset class="fieldset_account" id="fieldset_account">
+						<legend>E-mail</legend>
+						<label>Bo e-mail actual</label><br>
+						<input type="text"  value="bomail@host.com" disabled></input><br>
+						<label>E-mail nobo</label><br>
+						<input type="text" name="new-email" value=""></input><br>
+						<label>E-mail nobo atrobe</label><br>
+						<input type="text" name="second-new-emial" value=""></input><br>
+						<input class="account_btn" type="submit" value="Warda"></input>
+					</fieldset>
+				</form>
+		</div>
+	</div>

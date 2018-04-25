@@ -1,0 +1,75 @@
+<!--content-->
+	<div id="main_content" >
+		<div class="container">
+			<div class="big_title">Registracion</div>
+			<!-- START BLOCK : warning_box -->
+			<div id="warning_box">
+				<!-- START BLOCK : nomber_empty -->
+				<span class="warning">*Mester tin un nomber</span><br>
+				<!-- END BLOCK : nomber_empty -->
+				<!-- START BLOCK : invalidChar -->
+				<span class="warning">*Nomber mag tin letter cu cifra so</span><br>
+				<!-- END BLOCK : invalidChar -->
+				<!-- START BLOCK : nomber -->
+				<span class="warning">*Nomber ta existi kaba</span><br>
+				<!-- END BLOCK : nomber -->
+				<!-- START BLOCK : email -->
+				<span class="warning">*E-mail ta existi kaba</span><br>
+				<!-- END BLOCK : email -->
+				<!-- START BLOCK : invalidMail -->
+				<span class="warning">*E-mail ta invalido</span><br>
+				<!-- END BLOCK : invalidMail -->
+				<!-- START BLOCK : email_empty -->
+				<span class="warning">*Mester tin un e-mail</span><br>
+				<!-- END BLOCK : email_empty -->
+				<!-- START BLOCK : email_match -->
+				<span class="warning">*E-mail no ta cuadra cu otro</span><br>
+				<!-- END BLOCK : email_match -->
+				<!-- START BLOCK : country -->
+				<span class="warning">*Kies bo pais</span><br>
+				<!-- END BLOCK : country -->
+				<!-- START BLOCK : passw -->
+				<span class="warning">*Mester tin un password</span><br>
+				<!-- END BLOCK : passw -->
+				<!-- START BLOCK : passw_match -->
+				<span class="warning">*Password no ta cuadra cu otro</span><br>
+				<!-- END BLOCK : passw_match -->
+				<!-- START BLOCK : passww -->
+				<span class="warning">*Password no ta cumpli cu e requisito nan</span><br>
+				<!-- END BLOCK : passww -->
+				<!-- START BLOCK : agree -->
+				<span class="warning">*klik e box pa bai acuerdo cu nos reglanan</span><br>
+				<!-- END BLOCK : agree -->
+				<!-- START BLOCK : database -->
+				<span class="warning">*Algo a bai malo cu e database porfabor purba atrobe</span><br>
+				<!-- END BLOCK : database -->
+			</div>
+			<!-- END BLOCK : warning_box -->
+				<form id="form_regis" action="" method="POST">
+					<label for="nomber">Bo nomber riba Bo Mercado</label><br>
+					<input type="text" name="nomber" id="nomber" class="input_reg" value="{name}"></input><div class="tooltip"><span class="tooltiptext">Nomber mag tin letter y cifra so.</span></div><br>
+					<label id="email">E-mail</label><br>
+					<input type="text" id="email" name="email" class="input_reg" value="{email}"></input><br>
+					<label id="email2">Pone bo e-mail atrobe</label><br>
+					<input type="text" id="email2" name="email2" class="input_reg" autocomplete="off" value="{email2}"></input><br>
+					<label id="country">Bo pais</label><br>
+					<select class="select_reg" name="country" >
+						<option value="0" >Kies un pais....</option>
+						<!-- START BLOCK : option -->
+							<option value="{value}">{name}</option>
+						<!-- END BLOCK : option -->
+					</select>
+					<br>
+					<label id="psw">Password</label><br>
+					<input type="password" id="psw" name="psw" class="input_reg"> </input><div class="tooltip"><span class="tooltiptext">Password mester tin 6 of mas caracters, por lo menos 1 hoofdletter y 1 number.</span></div><br><br>
+					<label id="psw2">Pone bo password atrobe</label><br>
+					<input type="password" id="psw2" name="psw2" class="input_reg"></input><br>
+					<input class="check_reg" type="checkbox" name="agree" value="agree">
+						Door di click riba e box bo ta bai di acuerdo cu nos <a href="" class="reg_rules">reglanan</a>.
+					</input><br>
+					<!-- <div class="g-recaptcha" data-sitekey="6Lcu0yUTAAAAAKRWaUBZgw3tOR43RwR3Bya-EPgg"></div> -->
+					<input type="submit" class="btn_ask" value="Traha account"></input>
+					<a href="index.php?id=2" class="btn_cancel">Cancela</a>
+				</form>
+		</div>
+	</div>

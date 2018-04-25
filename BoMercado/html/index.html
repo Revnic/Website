@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bo Mercado</title>
+	<link rel="stylesheet" href="css/reset_style.css">
+	<link rel="stylesheet" href="css/main_style.css">
+	<script src="js/dropdown.js"></script>
+</head>
+<body>
+<!--header-->
+	<header>
+		<div class="container">
+			<a href="#home"><img id="logo" src="image/tent.png" alt="logo"></a>
+			<ul>
+			  <li><a class="nav" href="#home">login</a></li>
+			  <li class="dropdown">
+				<a href="javascript:void(0)" class="dropbtn" onclick="myFunction()">Bo Mercado &#9660 </a>
+				<div class="dropdown-content" id="myDropdown">
+				  <a href="#">Bo account</a>
+				  <a href="#">Bo advertencia</a>
+				</div>
+			  </li>
+			</ul>
+		</div>
+	</header>
+<!--search bar-->
+	<div id="search_bar" >
+		<div class="container">
+			<a id="ad_button" href="#">Pone bo advertensia</a>
+			<form class="search" action="">
+				<select class="search_select" name="category">
+					<option value="*">Tur categoria..</option>
+					<option value="volvo">Volvo</option>
+					<option value="saab">Saab</option>
+					<option value="fiat">Fiat</option>
+					<option value="audi">Audi boeki</option>
+				</select>
+				<select class="search_select" name="country">
+					<option value="*">ABC</option>
+					<option value="Aruba">Aruba </option>
+					<option value="Bonairu">Bonairu</option>
+					<option value="Korsów">Korsow</option>
+				</select>
+				<input class="search_button"type="submit" value="Busca">
+			</form>
+		</div>
+	</div>
+<!--content-->
+	<div id="main_content" >
+		<div class="container">
+			<!--Side menu-->
+			<div id="side_menu">
+				<table>
+					<tr>
+						<th><H1>Gategoria</H1></th>
+					</tr>
+					<tr>
+						<td><a class="side_menu" href="">Test title</a></td>
+					</tr>
+				</table>
+			</div>
+			<!--End Side menu-->
+			<div id="right_content">
+				<a class="content_title" href=""><h1>Producto poni riba mercado awe</h1></a>
+				<a href="">
+					<div class="product">
+						<img class="product_image" src="image/fiets.jpg" alt="logo">
+						<div class="title_product">Title </div>
+						<div class="prijs_product">AWG 18,00</div>
+						<div class="imag_product">
+							<img class="country_image" src="image/aruba_flag.png" alt="logo">
+						</div>
+					</div>
+				</a>
+				<a href="">
+					<div class="product">
+						<img class="product_image" src="image/fiets.jpg" alt="logo">
+						<div class="title_product">This is a long title</div>
+						<div class="prijs_product">USD 999999,99</div>
+						<div class="imag_product">
+							<img class="country_image" src="image/bonaire_flag.png" alt="logo">
+						</div>
+					</div>
+				</a>
+				<hr>
+				<a class="content_title" href=""><h1>Producto nan popular</h1></a>
+				<a href="">
+					<div class="product">
+						<img class="product_image" src="image/fiets.jpg" alt="logo">
+						<div class="title_product">This is a longer title then the other one</div>
+						<div class="prijs_product">ANG 18,00</div>
+						<div class="imag_product">
+							<img class="country_image" src="image/curacao_flag.png" alt="logo">
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+<!--footer-->
+	<footer>
+		<div class="container">
+		
+		</div>
+	</footer>
+</body>
+</html>

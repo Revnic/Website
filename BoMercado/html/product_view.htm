@@ -1,0 +1,203 @@
+<!--search bar-->
+	<div id="search_bar" >
+		<div class="container">
+			<a id="ad_button" href="index.php?id=5">Pone bo advertensia</a>
+			<form class="search" action="index.php?id=1" method="GET">
+				<select class="search_select" name="category">
+					<option value="*">Tur categoria..</option>
+					<!-- START BLOCK : CATEGORY_BAR -->
+					<option value="{id_b}">{title_b}</option>
+					<!-- END BLOCK : CATEGORY_BAR --> 
+				</select>
+				<select class="search_select" name="country">
+					<option value="*">ABC</option>
+					<!-- START BLOCK : COUNTRY_BAR -->
+					<option value="{id_c}">{country} </option>
+					<!-- END BLOCK : COUNTRY_BAR --> 
+				</select>
+				<input class="search_button"type="submit" value="Busca">
+			</form>
+		</div>
+	</div>
+<!--content-->
+<!-- The Modal -->
+<div id="mail-modal" class="mail-modal">
+	  <!-- Modal content -->
+	  <div class="mail-modal-content">
+			<h1 class="h1_mail">Tuma contacto cu Frank26</h1>
+				<form method="post" action="">
+					<fieldset class="fieldset-con-mail">
+					<label for="txtarea-mail">Bo mensage</label><br>
+						<textarea id="txtarea-mail" value="">Hallo Frank26,
+
+</textarea><br>
+						<h1>Bo information di contacto:</h1><br>
+						<label>Bo e-mail</label>
+						<p>tet@bohost.com</p><br>
+						<label>Bo telefoon</label><br>
+						<input type="text" value=""></input>
+					</fieldset>
+					<input type="submit" class="submit-btn" value="Manda e-mail"></input>
+					<input type="submit" class="cancel-btn" id="cancel-btn" value="Cancela"></input>
+				</form>
+			
+	  </div>
+</div>
+	<div id="main_content" >
+		<div class="container">
+				<div class="product_view">
+					<div class="product_view_header">
+						<h1 class="h1_view">A big title</h1>
+						<span class="span_icon"><img class="icon" title="Tanto biaha mira" src="image/view.png" alt="logo"> x mira</span>
+						<span class="span_icon"><img class="icon" title="E dia e la wordo poni" src="image/desde.png" alt="logo"> desde</span>
+						<img class="fav_icon" title="Favorite" onclick="" src="image/star_gray.png">
+					</div>
+					<div class="product_view_image">
+						<div class="slideshow_content">
+							<img class="mySlides" onclick="onClick(this)" id="myImg" src="image/fiets.jpg">
+							<img class="mySlides" onclick="onClick(this)" id="myImg" src="image/fiets/2.jpg">
+							<img class="mySlides" onclick="onClick(this)" id="myImg" src="image/fiets/3.jpg">
+							
+							<!-- The Modal -->
+							<div id="myModal" class="modal">
+							<span class="close" id="close">&#9747;</span>
+							  <img class="modal-content" id="img01">
+							</div>
+							
+							<div class="btn-floating" id="btn-floating-left" onclick="plusDivs(-1)"></div>
+							<div class="btn-floating" id="btn-floating-right" onclick="plusDivs(1)"></div>
+						</div>
+						<div id="product_view_prijs">
+							<h1>FL 9.999.999,99</h1>
+						</div>
+					</div>
+					<div class="product_view_footer">
+						<h1>Condition</h1>
+						<P>Nobo</P><br>
+						<h1>Description</h1>
+						<p> is simply dummy text of the printing and typesetting industry. 
+								Lorem Ipsum has been the industry's standard dummy text ever since</p>
+					</div>
+				</div>
+				<div class="contact_view">
+					<h1>Frank26</h1><br>
+					<p>Contatco preferi:</p><br>
+					<button id="msg_button" >Manda un e-mail</button>
+					<P><img class="icon" src="image/phone.png" alt="logo"> 5847544</P>
+				</div>
+				<div class="auction_view">
+					<h1> Findishi ta cuminsa na Fl 18.00</h1><br>
+					<form method="post" action="">
+						<input type="number" name="bid" maxlength="10" step="any" pattern="[0-9]+([,\.][0-9]+)?" class="input_action" autocomplete="off">
+						<button type="submit" value="Pone bo oferta" class="input_btn">Pone un oferta</button>
+					</form>
+				</div>
+				<div class="auction_bidder">
+					<ul>
+						<li id="auction_li">
+							<span class="auction_span" id="span_name">Hermenegildo</span>
+							<span class="auction_span" id="span_amount">FL 9.999.999.99</span>
+							<span class="auction_span" id="span_date">99-99-9999</span>
+						</li>
+						<li id="auction_li" class="auction_li">
+							<span class="auction_span" id="span_name">Iron</span>
+							<span class="auction_span" id="span_amount">FL 9.99</span>
+							<span class="auction_span" id="span_date">99-99-9999</span>
+						</li>
+						<li id="auction_li" class="auction_li">
+							<span class="auction_span" id="span_name">Jahad</span>
+							<span class="auction_span" id="span_amount">FL 9.99</span>
+							<span class="auction_span" id="span_date">99-99-9999</span>
+						</li>
+						<li id="auction_li" class="auction_li">
+							<span class="auction_span" id="span_name">Jahad</span>
+							<span class="auction_span" id="span_amount">FL 9.99</span>
+							<span class="auction_span" id="span_date">99-99-9999</span>
+						</li>
+						<li id="auction_li" class="auction_li">
+							<span class="auction_span" id="span_name">Jahad</span>
+							<span class="auction_span" id="span_amount">FL 9.99</span>
+							<span class="auction_span" id="span_date">99-99-9999</span>
+						</li>
+					</ul>
+					<button type="submit" value="delete" class="oferta">Kita bo oferta</button>
+				</div>
+		</div>
+		<div id="myModal" class="modal">
+		</div>
+		<script>
+		
+var mailModal = document.getElementById('mail-modal');
+var cancelBtn = document.getElementById('cancel-btn');
+var mailBtn = document.getElementById("msg_button");
+var span = document.getElementsByClassName("close")[0];
+var modal = document.getElementById('myModal');
+	
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+	showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+	var i;
+	var x = document.getElementsByClassName("mySlides");
+	
+	
+	var count = 0;
+	for(i = 0;  i < x.length; i++){
+		count += i;
+		if (count > 0){
+			document.getElementById("btn-floating-left").style.display = "block";
+			document.getElementById("btn-floating-right").style.display = "block";
+		}
+	}
+	
+	if (n > x.length) {slideIndex = 1}
+	if (n < 1) {slideIndex = x.length}
+	for (i = 0; i < x.length; i++) {
+		x[i].style.display = "none";
+	}
+	x[slideIndex-1].style.display = "block";
+
+}
+
+
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+function onClick(element) { 
+	document.getElementById("img01").src = element.src;
+	document.getElementById("myModal").style.display = "block";
+}
+
+window.onclick = function(e) {
+	if (e.target == modal || e.target == mailModal) {
+		modal.style.display = "none";
+		mailModal.style.display = "none";
+	}
+	
+	if (!e.target.matches('.dropbtn')) {
+
+		var dropdowns = document.getElementsByClassName("dropdown-content");
+		for (var d = 0; d < dropdowns.length; d++) {
+			var openDropdown = dropdowns[d];
+			if (openDropdown.classList.contains('show')) {
+				openDropdown.classList.remove('show');
+			}
+		}
+	}
+}
+
+mailBtn.onclick = function() {
+    mailModal.style.display = "block";
+}
+
+cancelBtn.onclick = function(){
+	mailModal.style.display = "none";
+}
+
+</script>
+	</div>

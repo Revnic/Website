@@ -1,0 +1,128 @@
+.slideshow_content{
+	width: 425px;
+	height: 300px;
+	position: relative;
+	background-color: white;
+	border-radius: 10px;
+	display: block;
+	float: left;
+}
+
+.mySlides{
+	margin: auto;
+	height: 300px;
+	max-width: 425px;
+	border-radius: 10px;
+	display: none;
+}
+
+
+#btn-floating-left{
+	position:absolute;
+	top: 45%;
+	left: 2px;
+	color: red;    
+	font-size: 35px;
+	font-weight: bolder;
+	background-color: #b30000;
+	height:30px;
+	width: 30px;
+	background-position: 2px 2px;
+	border-radius: 100%;
+	background-image: url(../image/arrow-left.png);
+	background-repeat: no-repeat;
+	background-size:25px 25px;
+	cursor: pointer;
+}
+
+#btn-floating-right{
+	position:absolute;
+	top: 45%;
+	right: 2px;
+	color: red;    
+	font-size: 35px;
+	font-weight: bolder;
+	background-color: #b30000;
+	height:30px;
+	width: 30px;
+	background-position: 2px 2px;
+	border-radius: 100%;
+	background-image: url(../image/arrow-right.png);
+	background-repeat: no-repeat;
+	background-size:25px 25px;
+	cursor: pointer;
+}
+
+
+/* Click on image*/
+
+#myImg {
+    border-radius: 5px;
+    cursor: zoom-in ;
+    transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* Modal background */
+.modal {
+    display: none;
+    position: fixed; 
+    z-index: 1;
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(102, 102, 102, 0.5);
+}
+
+/* Modal Content image */
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+	border-radius:5px;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+	margin-bottom: 200px;
+}
+
+
+/* Add Animation */
+.modal-content, #caption {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform: scale(0)}
+    to {-webkit-transform: scale(1)}
+}
+
+@keyframes zoom {
+    from {transform: scale(0.1)}
+    to {transform: scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #b30000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
