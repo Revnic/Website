@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bo Mercado</title>
+	<link rel="stylesheet" href="/css/reset_style.css">
+	<link rel="stylesheet" href="/css/main_style.css">
+	<script src="js/dropdown.js"></script>
+</head>
+<body>
+<!--content-->
+	<div id="main_content" >
+	<div class="container">
+		<div class="big_title">Cos no ta mustra bon :(</div>
+			<div class="msg_box">E pagina of e contenido no por wordo ha&ntildea (404 contenido no ha&ntildea).<br>
+							Sigu bo a click riba un link biew, type e adres fout, of bo ta purba di troll nos systema.
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -49,9 +49,9 @@
 					<label for="nomber">Bo nomber riba Bo Mercado</label><br>
 					<input type="text" name="nomber" id="nomber" class="input_reg" value="{name}"></input><div class="tooltip"><span class="tooltiptext">Nomber mag tin letter y cifra so.</span></div><br>
 					<label id="email">E-mail</label><br>
-					<input type="text" id="email" name="email" class="input_reg" value="{email}"></input><br>
+					<input type="text" id="email" autocomplete="off" ondrop="return false;" onpaste="return false;" name="email" class="input_reg" value="{email}"></input><br>
 					<label id="email2">Pone bo e-mail atrobe</label><br>
-					<input type="text" id="email2" name="email2" class="input_reg" autocomplete="off" value="{email2}"></input><br>
+					<input type="text" id="email2" autocomplete="off" ondrop="return false;" onpaste="return false;" name="email2" class="input_reg" autocomplete="off" value="{email2}"></input><br>
 					<label id="country">Bo pais</label><br>
 					<select class="select_reg" name="country" >
 						<option value="0" >Kies un pais....</option>
@@ -61,15 +61,15 @@
 					</select>
 					<br>
 					<label id="psw">Password</label><br>
-					<input type="password" id="psw" name="psw" class="input_reg"> </input><div class="tooltip"><span class="tooltiptext">Password mester tin 6 of mas caracters, por lo menos 1 hoofdletter y 1 number.</span></div><br><br>
+					<input type="password" autocomplete="off" id="psw" name="psw" class="input_reg"> </input><div class="tooltip"><span class="tooltiptext">Password mester tin 6 of mas caracters, por lo menos 1 hoofdletter y 1 number.</span></div><br><br>
 					<label id="psw2">Pone bo password atrobe</label><br>
-					<input type="password" id="psw2" name="psw2" class="input_reg"></input><br>
+					<input type="password" autocomplete="off" autocomplete="off" id="psw2" name="psw2" class="input_reg"></input><br>
 					<input class="check_reg" type="checkbox" name="agree" value="agree">
-						Door di click riba e box bo ta bai di acuerdo cu nos <a href="" class="reg_rules">reglanan</a>.
+						Door di click riba e box bo ta bai di acuerdo cu nos <a href="" target="_blank" class="reg_rules">reglanan</a>.
 					</input><br>
 					<!-- <div class="g-recaptcha" data-sitekey="6Lcu0yUTAAAAAKRWaUBZgw3tOR43RwR3Bya-EPgg"></div> -->
 					<input type="submit" class="btn_ask" value="Traha account"></input>
-					<a href="index.php?id=2" class="btn_cancel">Cancela</a>
+					<a href="Log-in" class="btn_cancel">Cancela</a>
 				</form>
 		</div>
 	</div>

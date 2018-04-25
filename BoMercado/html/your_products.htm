@@ -1,53 +1,63 @@
+
 <!--search bar-->
 	<div id="search_bar" >
 		<div class="container">
-			<a id="ad_button" href="index.php?id=5">Pone bo advertensia</a>
-			<form class="search" action="index.php?id=6" method="POST">
-				<select class="search_select" name="category">
-					<option value="*">Tur categoria..</option>
-					<option value="volvo">Volvo</option>
-					<option value="saab">Saab</option>
-					<option value="fiat">Fiat</option>
-					<option value="audi">Audi boeki</option>
-				</select>
-				<select class="search_select" name="country">
-					<option value="*">ABC</option>
-					<option value="Aruba">Aruba </option>
-					<option value="Bonairu">Bonairu</option>
-					<option value="Korsów">Korsow</option>
-				</select>
-				<input class="search_button"type="submit" value="Busca">
-			</form>
+			<a id="ad_button" href="advertisement">Pone bo advertensia</a>
+			<div class="big_title">Bo productonan</div>
 		</div>
 	</div>
 <!--content-->
 	<div id="main_content" >
-		
 		<div class="container">
+		<!-- START BLOCK : EMPTY_BOX -->
+		<P id="empty_box">Lastimamente bo no tin jun producto riba Bo Mercado!
+		<br>Primi riba e boton "Pone bo advertensia" pa bo pone bo prome producto riba Bo Mercado.</P>
+		<!-- END BLOCK : EMPTY_BOX -->
+		<!-- START BLOCK : AD_BOX -->
 			<div class="user_ads_view">
-				<table id="tbl_ad">
-					<tr >
-						<td id="td_ad" colspan="2">02-09-2016</td>
-					</tr>
-					<tr >
-						<th id="th_ad" colspan="2">Titulo mas largo cu tin check mas mas mas largo </th>
-					</tr>
-					<tr >
-						<td>Prijs:</td>
-						<td>50.00</td>
-					</tr>
-					<tr >
-						<td>Mira:</td>
-						<td>200</td>
-					</tr>
-					<tr >
-						<td>Ultimo oferta:</td>
-						<td>AWG 25,00</td>
-					</tr>
-				</table>
-				<a href="#" class="btn_ad_user">Wak</a>
-				<a href="#" class="btn_ad_user">Drecha</a><br/>
-				<a href="#" id="btn_dlt" class="btn_ad_user">Kite fe Bo Mercado</a>
+				<div id="prod_date">
+				<form action="Your-advertisements" method="POST">
+						<table id="tbl_ad">
+							<tr >
+								<td>Id: {id_prod}</td>
+								<td>
+									<input class="delete_icon" title="Delete" type="submit" name="delete" value="{id_prod}" 
+									onClick="return confirm('Bo ta sigur cu bo kier kita e producto fe Bo Mercado?')">
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div id="prod_info">
+						<table id="tbl_ad">
+							<tr >
+								<th id="th_ad" colspan="2">{title}</th>
+							</tr>
+							<tr class="p_tr" >
+								<td>Date</td>
+								<td>{date_p}</td>
+							</tr>
+							<tr class="p_tr" >
+								<td>Prijs:</td>
+								<td>{currency} {price}</td>
+							</tr>
+							<tr >
+								<td>Mira:</td>
+								<td>{count}</td>
+							</tr>
+							<!-- START BLOCK : OFFER -->
+							<tr class="p_tr_top">
+								<td>Ultimo oferta:</td>
+								<td>{currency2} {price2}</td>
+							</tr>
+							<!-- END BLOCK : OFFER -->
+						</table>
+					</div>
+				</form>
+				<div id="prod_btn">
+					<a href="{link}" class="btn_ad_user">Wak</a>
+					<!--<a href="#" id="btn_ad_user" class="btn_ad_user">Drecha</a><br/>-->
+				</div>
 			</div>
+		<!-- END BLOCK : AD_BOX -->
 		</div>
 	</div>

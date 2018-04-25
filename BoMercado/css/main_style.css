@@ -7,8 +7,8 @@ html{
 body{
 	min-width: 299px;
 	margin: 0 0 200px;
+	font-family: Calibri;
 }
-
 
 select, input, label, button{
 	cursor: pointer;
@@ -39,8 +39,7 @@ h1{
 }
 .container{
 	margin: auto;
-	max-width: 1000px;
-	min-width: 1000px;
+	width: 1000px;
 }
 
 header{
@@ -51,17 +50,27 @@ header{
 #search_bar{
 	overflow: hidden;
 	background-color: #ea9999;
+    background: -webkit-linear-gradient(#BDBDBD, #807878);
+    background: -o-linear-gradient(#BDBDBD, #807878);
+    background: -moz-linear-gradient(#BDBDBD, #807878);
+    background: linear-gradient(#ea9999, #da7e7e);
 	height:75px;
 	box-shadow: 1px 2px 2px 0px  rgba(0,0,0,0.2);
 }
 
 footer{
-	background-color: #BDBDBD;
+	background: #BDBDBD; /* For browsers that do not support gradients */
+	background: -webkit-linear-gradient( #807878, #BDBDBD); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient( #807878, #BDBDBD); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#807878, #BDBDBD); /* For Firefox 3.6 to 15 */
+	background: linear-gradient( #807878, #BDBDBD); /* Standard syntax */
 	position: absolute;
     left: 0;
     bottom: 0;
     height: 200px;
     width: 100%;
+	position: absolute;
+	border-top: 3px solid #b74040;
 }
 
 #ad_button{
@@ -187,14 +196,16 @@ input.search_button:active{
 
 /*Content*/
 #main_content{
-margin-top: 20px;
+	margin-top: 20px;
+    overflow: hidden;
+    margin-bottom: 240px;
 }
 
 .content_title{
 	display: block;
 	margin-bottom: 20px;
 	color:#7a7a7a;
-	width: 200px;
+	min-width: 200px;
 }
 
 .content_title:hover{
@@ -202,10 +213,11 @@ margin-top: 20px;
 }
 
 .product{
-	width:163px;
-	height:158px;
-	margin: 1.3%;
-	border-radius: 3px;
+	max-width: 178px;
+    min-width: 178px;
+    height: 200px;
+    margin: 0.3%;
+	margin-bottom: 7px;
 	border: 1px solid #cfcfcf;
 	display: inline-block;
 	background-color: #f3f3f3;
@@ -216,13 +228,25 @@ margin-top: 20px;
 }
 
 .product_image{
-	width: 163px;
-	height: 100px;
-	border-radius: 3px 3px 0px 0px;
+	max-height: 100%;
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+.image_box{
+	display: block;
+    font-size: 0;
+    height: 136px;
+    line-height: 136px;
+    margin: 0;
+    overflow: hidden;
+    text-align: center;
+    white-space: nowrap;
+    width: 100%;
 }
 
 .title_product{
-	margin:5px;
+	margin:10px;
 	color: #b30000;
 	max-width:150px;
 	max-height: 16px;
@@ -233,7 +257,7 @@ margin-top: 20px;
 .prijs_product{
 	margin-top:5px;
 	margin-left: 10px;
-	width: 112px;
+	width: 130px;
 	max-height: 16px;
 	color: black;
 	float: left;
@@ -256,7 +280,7 @@ margin-top: 20px;
 	margin-right: 20px;
 	display: block;
 	float: left;
-	margin-bottom: 230px;
+	background-color: #fff3f3;
 }
 
 #right_content{
@@ -264,7 +288,6 @@ margin-top: 20px;
 	height: auto;
 	display: inline-block;
 	float: left;
-	margin-bottom:240px;
 }
 
 
@@ -748,18 +771,17 @@ input.btn_adv:active{
 	width: 610px;
 	height: auto;
 	background-color: #f3f3f3;
-	margin-right: 20px;
+	margin-right: 10px;
 	float: left;
 	border-radius: 3px;
 	padding: 20px;
-	margin-bottom: 200px;
 	box-shadow: 1px 2px 2px 0px #D3D3D3;
 }
 
 .contact_view{
 	position: absolute;
 	width: 290px;
-	height: 160px;
+	height: auto;
 	background-color: #FFDFDF;
 	float: left;
 	margin-bottom: 20px;
@@ -865,6 +887,7 @@ input.btn_adv:active{
 	width: 290px;
 	padding-bottom: 10px;
 	padding-top: 10px;
+
 }
 
 .auction_li{
@@ -931,10 +954,6 @@ input.btn_adv:active{
 	margin-bottom: 20px;
 }
 
-#fieldset_account{
-	margin-bottom: 240px;
-}
-
 .account_btn{
 	width: auto;
 	height: auto;
@@ -955,6 +974,19 @@ input.btn_adv:active{
 }
 
 /* mail-Modal Content */
+.report-modal{
+    display: none;
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto;
+	background-color: rgba(102, 102, 102, 0.5);
+}
+
 .mail-modal {
     display: none;
     position: fixed; 
@@ -1039,20 +1071,61 @@ input.btn_adv:active{
 .submit-btn:active{box-shadow: none;}
 
 /* bo advertensia */
+#prod_btn{
+	padding: 10px;
+	/*border: 1px solid black;*/
+	bottom: 0px;
+    position: absolute;
+
+}
+
+#prod_date{
+	padding: 10px;
+	border-radius: 5px 5px 0px 0px;
+	font-weight: bold;
+}
+
+.delete_icon{
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	width: 9%;
+	height: 12%;
+	background-image: url("../image/icon_delete.png");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-color: #f3f3f3;
+	border: none;
+	color: transparent;
+}
+
+.delete_icon:hover{
+	background-image: url("../image/icon_delete_open.png");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-color: #f3f3f3;
+	border: none;
+} 
+
+#prod_info{
+	background-color: white;
+	padding: 10px;
+	height: 90px;
+}
 
 .user_ads_view{
 	border-radius: 5px;
 	box-shadow: 1px 2px 2px 0px #D3D3D3;
-	height: auto;
-	width: 225px;
+	height: 200px;
+	width: 313px;
 	background-color: #f3f3f3;
 	float: left;
-	margin: 11px;
-	padding: 5px;
+	margin: 1%;
+    position: relative;
 }
 
 #tbl_ad{
-	width: 225px;
+	width: 263px;
 }
 
 #td_ad{
@@ -1061,11 +1134,23 @@ input.btn_adv:active{
 
 #th_ad{
 	text-align: left;
+	color: #b30000;
 }
 
 #btn_dlt{
 	background-color: #b30000;
 	color: white;
+}
+#btn_ad_user{
+	margin-left: 108px
+}
+
+.p_tr{
+	border-bottom: 1px dotted #efefef;
+}
+
+.p_tr_top{
+	border-top: 1px dotted #efefef;
 }
 
 .btn_ad_user{
@@ -1078,34 +1163,27 @@ input.btn_adv:active{
 	box-shadow: 1px 2px 2px 0px #656565;
 }
 
+.btn_ad_user:Hover{
+	background: #e0dede;
+}
+
 .btn_ad_user:active{
 	box-shadow: none;
 }
 
 /* favorite */
-.fav_star{
-	position: absolute;
-	top: -5px;
-	height:40px;
-	width: 35px;
-	
-}
+
 
 .product_fav{
 	position: relative;
-	width:162px;
-	height:158px;
-	margin: 10px;
-	border-radius: 3px;
-	border: 1px solid #cfcfcf;
-	display: inline-block;
-	background-color: #f3f3f3;
-}
-
-.product_image_fav{
-	width: 162px;
-	height: 100px;
-	border-radius: 3px 3px 0px 0px;
+	max-width: 178px;
+    min-width: 178px;
+    height: 200px;
+    margin: 0.3%;
+    border-radius: 3px;
+    border: 1px solid #cfcfcf;
+    display: inline-block;
+    background-color: #f3f3f3;
 }
 
 .product_view_header{
@@ -1121,8 +1199,6 @@ input.btn_adv:active{
 }
 
 .fav_icon:hover{
-	height: 35px;
-	width: 35px;
 }
 
 #warning_box{
@@ -1135,6 +1211,19 @@ input.btn_adv:active{
 	margin-bottom: 30px;
 	background-color: #ffcccc;
 	color: red;
+	text-align: center;
+}
+
+#msg_box_green{
+	border: 1px solid green;
+	border-radius: 3px;
+	height: auto;
+	width: 450px;
+	margin: auto;
+	padding: 10px;
+	margin-bottom: 30px;
+	background-color: #cdffcc;
+	color: #146330;
 	text-align: center;
 }
 
@@ -1190,4 +1279,104 @@ input.btn_adv:active{
 	color: #b30000;
 	font-size: 30px;
 	font-weight: bold;
+}
+
+.no-results{
+	margin: auto;
+    width: 310px;
+    font-size: 20px;
+    margin-top: 100px;
+}
+
+#home-link{
+	position: absolute;
+    color: #b30000;
+    top: 18px;
+}
+
+#empty_box{
+	margin-top: 115px;
+	text-align: center;
+	color: grey;
+	font-size: 20px;
+}
+
+.fb_iframe_widget {
+	top: -3px;
+}	
+
+.footer-box{
+    width: 100%;
+	min-height: 112px;
+    max-height: 112px;
+	color: #675959;
+	padding-top: 3px;
+	overflow: hidden;
+}
+
+.footer-underbox{
+display: block;
+width: 1000px;
+text-align: center; 
+color: #545050;
+padding: 10px 0px 10px 0px;
+font-size: 10px;
+position: relative;
+bottom: -40px;
+}
+
+.u-footer{
+	display: block;
+	padding-right: 75px;
+	list-style-type: none;
+	margin: 10px;
+	text-decoration: none;
+	float: left;
+	min-height: 112px;
+}
+
+.u-footer-right{
+	display: inline-block;
+	list-style-type: none;
+	margin: 10px;
+	text-decoration: none;
+}
+
+li,a{color:#675959;}
+
+.footer-a:hover{
+	color:#b7b7b7;
+}
+
+.social-button{
+	float: right;
+	margin-right: 58px;
+}
+
+.contact-box{
+	margin: auto;
+	width: 500px;
+}
+
+.contact-form{
+	width:100%;
+}
+
+#submit-btn{
+	position: relative;
+    right: -406px;
+}
+
+.footer-content{
+	display: block;
+	float: left;
+	width: 500px;
+	padding-top: 5px;
+}
+
+#left-box-footer{
+}
+
+#right-box-footer{
+	
 }

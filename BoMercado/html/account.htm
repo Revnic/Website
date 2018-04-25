@@ -2,50 +2,69 @@
 	<div id="search_bar" >
 		<div class="container">
 			<a id="ad_button" href="index.php?id=5">Pone bo advertensia</a>
-			<form class="search" action="index.php?id=6">
-				<select class="search_select" name="category">
-					<option value="*">Tur categoria..</option>
-					<option value="volvo">Volvo</option>
-					<option value="saab">Saab</option>
-					<option value="fiat">Fiat</option>
-					<option value="audi">Audi boeki</option>
-				</select>
-				<select class="search_select" name="country">
-					<option value="*">ABC</option>
-					<option value="Aruba">Aruba </option>
-					<option value="Bonairu">Bonairu</option>
-					<option value="Korsów">Korsow</option>
-				</select>
-				<input class="search_button"type="submit" value="Busca">
-			</form>
+			<div class="big_title">Bo account</div>
 		</div>
 	</div>
 <!--content-->
 	<div id="main_content" >
 		<div class="container">
-			<div class="big_title">Bo account</div>
-				<form method="post" action="">
+		<!-- START BLOCK : msg_box_green -->
+			<div id="msg_box_green">
+				<!-- START BLOCK : DATA -->
+				<span class="warning">Bo datos nan a wordo warda exitosamente</span><br>
+				<!-- END BLOCK : DATA -->
+				<!-- START BLOCK : MAILOK -->
+				<span class="warning">Bo email a wordo warda exitosamente</span><br>
+				<!-- END BLOCK : MAILOK -->
+			</div>
+		<!-- END BLOCK : msg_box_green -->
+		<!-- START BLOCK : warning_box -->
+			<div id="warning_box">
+				<!-- START BLOCK : nomber_empty -->
+				<span class="warning">*Mester tin un nomber</span><br>
+				<!-- END BLOCK : nomber_empty -->
+				<!-- START BLOCK : invalidChar -->
+				<span class="warning">*Nomber mag tin letter cu cifra so</span><br>
+				<!-- END BLOCK : invalidChar -->
+				<!-- START BLOCK : nomber -->
+				<span class="warning">*Nomber ta existi kaba</span><br>
+				<!-- END BLOCK : nomber -->
+				<!-- START BLOCK : email -->
+				<span class="warning">*E-mail ta existi kaba</span><br>
+				<!-- END BLOCK : email -->
+				<!-- START BLOCK : invalidMail -->
+				<span class="warning">*E-mail ta invalido</span><br>
+				<!-- END BLOCK : invalidMail -->
+				<!-- START BLOCK : email_empty -->
+				<span class="warning">*Mester jena e box nan di e-mail</span><br>
+				<!-- END BLOCK : email_empty -->
+				<!-- START BLOCK : email_match -->
+				<span class="warning">*E-mail no ta cuadra cu otro</span><br>
+				<!-- END BLOCK : email_match -->
+			</div>
+			<!-- END BLOCK : warning_box -->
+				<form method="POST" action="">
 					<fieldset class="fieldset_account">
 						<legend>Bo datos</legend>
 						<label>Bo nomber</label><br>
-						<input type="text"  name="name" value=""></input><br>
+						<input type="text"  name="name" value="{name}"></input><br>
 						<label>Nomber di bo caya</label><br>
-						<input type="text" name="street-name" value=""></input><br>
+						<input type="text" name="street-name" placeholder="B.v. Sero preto"  value="{street}"></input><br>
 						<label>Number di bo telefoon</label><br>
-						<input type="number" name="phone" value=""></input><br>
-						<input class="account_btn" type="submit" value="Warda"></input>
+						<input type="number" name="phone" value="{phone}"></input><br>
+						<input class="account_btn" type="submit" name="data" value="Warda"></input>
 					</fieldset>
 				</form>
-				<form method="post" action="">
+				<form method="POST" action="">
 					<fieldset class="fieldset_account" id="fieldset_account">
 						<legend>E-mail</legend>
 						<label>Bo e-mail actual</label><br>
-						<input type="text"  value="bomail@host.com" disabled></input><br>
+						<input type="text"  value="{user_mail}" readonly></input><br>
 						<label>E-mail nobo</label><br>
-						<input type="text" name="new-email" value=""></input><br>
+						<input type="text" name="new_email" ondrop="return false;" onpaste="return false;" value=""></input><br>
 						<label>E-mail nobo atrobe</label><br>
-						<input type="text" name="second-new-emial" value=""></input><br>
-						<input class="account_btn" type="submit" value="Warda"></input>
+						<input type="text" name="second_new_email" ondrop="return false;" onpaste="return false;" value=""></input><br>
+						<input class="account_btn" type="submit" name="mail" value="Warda"></input>
 					</fieldset>
 				</form>
 		</div>

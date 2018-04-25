@@ -2,7 +2,7 @@
 <!--search bar-->
 	<div id="search_bar" >
 		<div class="container">
-			<a id="ad_button" href="index.php?id=5">Pone bo advertensia</a>
+			<a id="ad_button" href="advertisement">Pone bo advertensia</a>
 			<form class="search" action="index.php?id=1" method="GET">
 				<select class="search_select" name="category">
 					<option value="*">Tur categoria..</option>
@@ -38,161 +38,99 @@
 			</div>
 			<!--End Side menu-->
 			<div id="right_content">
-				<!-- START BLOCK : CONTENT -->
-				<a class="content_title" href="index.php?id=1&category=recent"><h1>Producto nan recien</h1></a>
-				<!-- START BLOCK : RECENT -->
-				<a href="index.php?id=7&product={idProduct}" title="{titulo_producto}">
-					<div class="product">
-						<img class="product_image" src="{prod_image}" alt="no-image">
-						<div class="title_product">{titulo_producto}</div>
-						<div class="prijs_product">{currency} {price}</div>
-						<div class="imag_product">
-							<img class="country_image" title="{name_country}" src="{flag}" alt="logo">
-						</div>
-					</div>
-				</a>
-				<!-- END BLOCK : RECENT -->
 				<!-- START BLOCK : AUCTION_TITLE -->
-				<hr>
 				<a class="content_title" href="index.php?id=1&category=auction"><h1>Producto den findishi</h1></a>
 				<!-- END BLOCK : AUCTION_TITLE -->
 				<!-- START BLOCK : AUCTION -->
 				<a href="index.php?id=7&product={idProduct_a}" title="{titulo_producto_a}" >
 					<div class="product">
-						<img class="product_image" src="{prod_image_a}" alt="logo">
+						<div class="image_box">
+						<img class="product_image" src="{prod_image}" alt="{image_title}" >
+						</div>
 						<div class="title_product">{titulo_producto_a}</div>
 						<div class="prijs_product">{currency} {price_a}</div>
 						<div class="imag_product">
-							<img class="country_image" title="{name_country}" src="{flag}" alt="logo">
+							<img class="country_image" title="{name_country}" src="{flag}" alt="{name_country}">
 						</div>
 					</div>
 				</a>
 				<!-- END BLOCK : AUCTION -->
-				<!-- START BLOCK : POPULAR_TITLE -->
+				<!-- START BLOCK : HR -->
 				<hr>
-				<a class="content_title" href="index.php?id=1&category=popular"><h1>Producto nan popular</h1></a>
+				<!-- END BLOCK : HR -->
+				<!-- START BLOCK : POPULAR_TITLE -->
+				<a class="content_title" href="index.php?id=1&category=popular"><h1>Productonan popular</h1></a>
 				<!-- END BLOCK : POPULAR_TITLE -->
 				<!-- START BLOCK : POPULAR -->
-				<a href="">
+				<a href="index.php?id=7&product={idProduct}" title="{titulo_producto}">
 					<div class="product">
-						<img class="product_image" src="image/fiets.jpg" alt="logo">
+						<div class="image_box">
+						<img class="product_image" src="{prod_image}" alt="{image_title}" >
+						</div>
 						<div class="title_product">{titulo_producto}</div>
-						<div class="prijs_product">ANG {price}</div>
+						<div class="prijs_product">{currency} {price}</div>
 						<div class="imag_product">
-							<img class="country_image" src="image/curacao_flag.png" alt="logo">
+							<img class="country_image" title="{name_country}" src="{flag}" alt="{name_country}">
 						</div>
 					</div>
 				</a>
 				<!-- END BLOCK : POPULAR -->
-				<!-- END BLOCK : CONTENT -->
-				
+				<!-- START BLOCK :  RECENT_TITLE -->
+					<hr>
+					<a class="content_title" href="index.php?id=1&category=recent"><h1>Productonan recien</h1></a>
+					<!-- END BLOCK : RECENT_TITLE -->
+					<!-- START BLOCK : RECENT -->
+					<a href="index.php?id=7&product={idProduct}" title="{titulo_producto}">
+						<div class="product">
+							<div class="image_box">
+							<img class="product_image" src="{prod_image}" alt="{image_title}" >
+							</div>
+							<div class="title_product">{titulo_producto}</div>
+							<div class="prijs_product">{currency} {price}</div>
+							<div class="imag_product">
+								<img class="country_image" title="{name_country}" src="{flag}" alt="{name_country}">
+							</div>
+						</div>
+					</a>
+				<!-- END BLOCK : RECENT -->
 				<!-- START BLOCK : SEARCH -->
 				<div id="sortia_box">
-					<select class="sortia_select" name="country">
-						<option value="1">Datum (nobo-bieuw)</option>
-						<option value="2">Datum (bieuw-nobo)</option>
-						<option value="3">Prijs (halto-bow)</option>
-						<option value="4">Prijs (bow-halto)</option>
+				<form method="POST">
+					<select class="sortia_select" name="sorted" onchange="this.form.submit();">
+						<option value="1" {SELECT1}>Datum (nobo-bieuw) </option>
+						<option value="2" {SELECT2}>Datum (bieuw-nobo) </option>
+						<option value="3" {SELECT3}>Prijs (halto-bow) </option>
+						<option value="4" {SELECT4}>Prijs (bow-halto) </option>
 					</select>
+				</form>
 					<P id="select_title">Sortia riba</P>
 				</div>
 				<!-- END BLOCK : SEARCH -->
 				<!-- START BLOCK : CONTENT_CATEGORY -->
-				<a href=" index.php?id=7">
-				<div class="search_product">
-					<div class="search_content" id="left_content_product">
-						<img class="search_product_image" align="middle" title="comming soon!" src="image/fiets.jpg" >
-					</div>
-					<div class="search_content" id="center_content_product">
-						<h1 class="title_product_search">Titulo por ta hopi largo awo nos ta bai test con largo e por ta, asina nos por wak con e ta </h1>
-						<div class="search_product_description">
-							<p> is simply dummy text of the printing and typesetting industry. 
-							Lorem Ipsum has been the industry's standard dummy text ever since</p>
+					<a href=" index.php?id=7&product={idProduct}">
+					<div class="search_product">
+						<div class="search_content" id="left_content_product">
+							<img class="search_product_image" align="middle" title="{image_title}" src="{prod_image}" >
+						</div>
+						<div class="search_content" id="center_content_product">
+							<h1 class="title_product_search">{titulo_producto}</h1>
+							<div class="search_product_description">
+								<p>{description}</p>
+							</div>
+						</div>
+						<div class="search_content" id="right_content_product">
+							<div class="product_prijs">{currency} {price}</div>
+							<div class="product_datum">{datum}</div>
+							<div class="country_image_search">
+								<img class="search_product_country" align="right" title="{name_country}" src="{flag}" >
+							</div>
 						</div>
 					</div>
-					<div class="search_content" id="right_content_product">
-						<div class="product_prijs">ANF 9.999.999.999,99</div>
-						<div class="product_datum">17-07-2016</div>
-						<div class="country_image_search">
-							<img class="search_product_country" align="right" title="aruba" src="image/aruba_flag.png" >
-						</div>
-					</div>
-				</div>
-				</a>
-				<!-- END BLOCK : CONTENT_CATEGORY -->
-			
-				<!-- START BLOCK : CONTENT_SEARCH -->
-				
-				<a href=" index.php?id=7">
-				<div class="search_product">
-					<div class="search_content" id="left_content_product">
-						<img class="search_product_image" align="middle" title="comming soon!" src="image/fiets.jpg" >
-					</div>
-					<div class="search_content" id="center_content_product">
-						<h1 class="title_product_search">Titulo por ta hopi largo awo nos ta bai test con largo e por ta, asina nos por wak con e ta </h1>
-						<div class="search_product_description">
-							<p> is simply dummy text of the printing and typesetting industry. 
-							Lorem Ipsum has been the industry's standard dummy text ever since</p>
-						</div>
-					</div>
-					<div class="search_content" id="right_content_product">
-						<div class="product_prijs">ANF 9.999.999.999,99</div>
-						<div class="product_datum">17-07-2016</div>
-						<div class="country_image_search">
-							<img class="search_product_country" align="right" title="aruba" src="image/aruba_flag.png" >
-						</div>
-					</div>
-				</div>
-				</a>
-				<!-- END BLOCK : CONTENT_SEARCH -->
-				
-				<!-- START BLOCK : RECENT_ALL -->
-				
-				<a href=" index.php?id=7&product={idProduct}">
-				<div class="search_product">
-					<div class="search_content" id="left_content_product">
-						<img class="search_product_image" align="middle" title="comming soon!" src="{prod_image}" >
-					</div>
-					<div class="search_content" id="center_content_product">
-						<h1 class="title_product_search">{titulo_producto}</h1>
-						<div class="search_product_description">
-							<p>{description}</p>
-						</div>
-					</div>
-					<div class="search_content" id="right_content_product">
-						<div class="product_prijs">{currency} {price}</div>
-						<div class="product_datum">{datum}</div>
-						<div class="country_image_search">
-							<img class="search_product_country" align="right" title="{name_country}" src="{flag}" >
-						</div>
-					</div>
-				</div>
-				</a>
-				<!-- END BLOCK : RECENT_ALL -->	
-
-				<!-- START BLOCK : AUCTION_ALL -->
-				<a href=" index.php?id=7&product={idProduct}">
-				<div class="search_product">
-					<div class="search_content" id="left_content_product">
-						<img class="search_product_image" align="middle" title="comming soon!" src="{prod_image}" >
-					</div>
-					<div class="search_content" id="center_content_product">
-						<h1 class="title_product_search">{titulo_producto}</h1>
-						<div class="search_product_description">
-							<p>{description}</p>
-						</div>
-					</div>
-					<div class="search_content" id="right_content_product">
-						<div class="product_prijs">{currency} {price}</div>
-						<div class="product_datum">{datum}</div>
-						<div class="country_image_search">
-							<img class="search_product_country" align="right" title="{name_country}" src="{flag}" >
-						</div>
-					</div>
-				</div>
-				</a>
-				<!-- END BLOCK : AUCTION_ALL -->							
-				
+					</a>
+				<!-- END BLOCK : CONTENT_CATEGORY -->			
+				<!-- START BLOCK : NORESULTS -->
+				<p class="no-results"> Sorry nos no por a ha&ntilde;a jun resultado</P>
+				<!-- END BLOCK : NORESULTS -->	
 			</div>
 		</div>
 	</div>

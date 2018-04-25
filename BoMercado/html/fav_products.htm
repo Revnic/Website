@@ -1,20 +1,19 @@
 <!--search bar-->
 	<div id="search_bar" >
 		<div class="container">
-			<a id="ad_button" href="index.php?id=5">Pone bo advertensia</a>
-			<form class="search" action="index.php?id=6" method="POST">
+			<a id="ad_button" href="advertisement">Pone bo advertensia</a>
+			<form class="search" action="index.php?id=1" method="GET">
 				<select class="search_select" name="category">
 					<option value="*">Tur categoria..</option>
-					<option value="volvo">Volvo</option>
-					<option value="saab">Saab</option>
-					<option value="fiat">Fiat</option>
-					<option value="audi">Audi boeki</option>
+					<!-- START BLOCK : CATEGORY_BAR -->
+					<option value="{id_b}">{title_b}</option>
+					<!-- END BLOCK : CATEGORY_BAR --> 
 				</select>
 				<select class="search_select" name="country">
 					<option value="*">ABC</option>
-					<option value="Aruba">Aruba </option>
-					<option value="Bonairu">Bonairu</option>
-					<option value="Korsów">Korsow</option>
+					<!-- START BLOCK : COUNTRY_BAR -->
+					<option value="{id_c}">{country} </option>
+					<!-- END BLOCK : COUNTRY_BAR --> 
 				</select>
 				<input class="search_button"type="submit" value="Busca">
 			</form>
@@ -25,72 +24,34 @@
 		<div class="container">
 			<!--Side menu-->
 			<div id="side_menu">
-				<table>
+				<table class="table_sidemenu">
 					<tr>
-						<th><H1>Gategoria</H1></th>
+						<th class="th_sidemenu"><H1>Categoria</H1></th>
 					</tr>
+					<!-- START BLOCK : CATEGORY_TITLE -->
 					<tr>
-						<td><a class="side_menu" href="">Test title</a></td>
+						<td class="td_sidemenu"><a class="side_menu" href="index.php?id=1&category={id}">{title}</a></td>
 					</tr>
+					<!-- END BLOCK : CATEGORY_TITLE --> 
 				</table>
 			</div>
 			<!--End Side menu-->
 			<div id="right_content">
-				<a href="">
+			<div class="big_title">Bo favoritonan</div>
+			<!-- START BLOCK : FAV_BOX -->
+				<a href="index.php?id=7&product={id}" title="{title}">
 					<div class="product_fav">
-						<img class="product_image_fav" src="image/fiets.jpg" alt="logo">
-						<img class="fav_star" src="image/star.png" alt="favorite">
-						<div class="title_product">Title </div>
-						<div class="prijs_product">AWG 18,00</div>
+						<div class="image_box">
+						<img class="product_image" src="{url_image}" alt="{image_title}">
+						</div>
+						<div class="title_product">{title} </div>
+						<div class="prijs_product">{currency} {price}</div>
 						<div class="imag_product">
-							<img class="country_image" src="image/aruba_flag.png" alt="logo">
+							<img class="country_image" src="{url_flag}" title="{flag_title}" alt="{flag_title}">
 						</div>
 					</div>
 				</a>
-				<a href="">
-					<div class="product_fav">
-						<img class="product_image_fav" src="image/fiets.jpg" alt="logo">
-						<img class="fav_star" src="image/star.png" alt="favorite">
-						<div class="title_product">Title </div>
-						<div class="prijs_product">AWG 18,00</div>
-						<div class="imag_product">
-							<img class="country_image" src="image/aruba_flag.png" alt="logo">
-						</div>
-					</div>
-				</a>
-				<a href="">
-					<div class="product_fav">
-						<img class="product_image_fav" src="image/fiets.jpg" alt="logo">
-						<img class="fav_star" src="image/star.png" alt="favorite">
-						<div class="title_product">Title </div>
-						<div class="prijs_product">AWG 18,00</div>
-						<div class="imag_product">
-							<img class="country_image" src="image/aruba_flag.png" alt="logo">
-						</div>
-					</div>
-				</a>
-				<a href="">
-					<div class="product_fav">
-						<img class="product_image_fav" src="image/fiets.jpg" alt="logo">
-						<img class="fav_star" src="image/star.png" alt="favorite">
-						<div class="title_product">Title </div>
-						<div class="prijs_product">AWG 18,00</div>
-						<div class="imag_product">
-							<img class="country_image" src="image/aruba_flag.png" alt="logo">
-						</div>
-					</div>
-				</a>
-				<a href="">
-					<div class="product_fav">
-						<img class="product_image_fav" src="image/fiets.jpg" alt="logo">
-						<img class="fav_star" src="image/star.png" alt="favorite">
-						<div class="title_product">Title </div>
-						<div class="prijs_product">AWG 18,00</div>
-						<div class="imag_product">
-							<img class="country_image" src="image/aruba_flag.png" alt="logo">
-						</div>
-					</div>
-				</a>
+			<!-- END BLOCK : FAV_BOX --> 
 			</div>
 		</div>
 	</div>

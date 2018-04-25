@@ -3,7 +3,6 @@
 	height: 300px;
 	position: relative;
 	background-color: white;
-	border-radius: 10px;
 	display: block;
 	float: left;
 }
@@ -12,7 +11,6 @@
 	margin: auto;
 	height: 300px;
 	max-width: 425px;
-	border-radius: 10px;
 	display: none;
 }
 
@@ -57,7 +55,6 @@
 /* Click on image*/
 
 #myImg {
-    border-radius: 5px;
     cursor: zoom-in ;
     transition: 0.3s;
 }

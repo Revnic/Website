@@ -6,7 +6,7 @@ $content->prepare();
 
 $key = $_GET['key'];
 
-$sql_select = "SELECT `key` FROM `passwordToken` WHERE `KEY`='".$key."'" ;
+$sql_select = "SELECT `key` FROM `passwordtoken` WHERE `KEY`='".$key."'" ;
 $result = $conn->query($sql_select);
 
 if($key != "" && $result->num_rows > 0 )
@@ -21,7 +21,7 @@ if($key != "" && $result->num_rows > 0 )
 		$passw_match = 1;
 		$passw_empty = 1;
 		
-		$sql = "SELECT * FROM `passwordToken` WHERE `key` = '".$_GET['key']."'";
+		$sql = "SELECT * FROM `passwordtoken` WHERE `key` = '".$_GET['key']."'";
 		$result = $conn->query($sql);
 		
 		if($result->num_rows > 0)
@@ -77,21 +77,21 @@ if($key != "" && $result->num_rows > 0 )
 				$sql_update = "UPDATE `account` SET `password` = '".$hashPassword."' WHERE `idaccount`='".$id."'";
 				if($conn->query($sql_update)=== TRUE){
 					 
-					$sql_delete = "DELETE FROM `passwordToken` WHERE `account_idaccount`= '".$id."'";
+					$sql_delete = "DELETE FROM `passwordtoken` WHERE `account_idaccount`= '".$id."'";
 					$conn->query($sql_delete);
 					
-					header("Location: index.php?id=2");
+					header("Location: log-in");
 				}
 			} 
 		}
 		else
 		{
-			header("Location: index.php?id=404");
+			header("Location: Error-404");
 		}
 	}
 }
 else
 {
-	header("Location: index.php?id=404");
+	header("Location: Error-404");
 }
 ?>

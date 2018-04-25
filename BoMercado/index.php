@@ -28,13 +28,13 @@ if(!empty($_GET['id']))
         else
         {
 			//page not found ERROR: 404
-            header("Location: index.php?id=404");
+            header("Location: Error-404");
         }
     }
     else
     {
 		//error no data found in database
-        header("Location: index.php?id=404");
+        header("Location: Error-404");
     }
 }
 else

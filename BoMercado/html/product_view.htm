@@ -1,7 +1,7 @@
 <!--search bar-->
 	<div id="search_bar" >
 		<div class="container">
-			<a id="ad_button" href="index.php?id=5">Pone bo advertensia</a>
+			<a id="ad_button" href="advertisement">Pone bo advertensia</a>
 			<form class="search" action="index.php?id=1" method="GET">
 				<select class="search_select" name="category">
 					<option value="*">Tur categoria..</option>
@@ -24,40 +24,43 @@
 <div id="mail-modal" class="mail-modal">
 	  <!-- Modal content -->
 	  <div class="mail-modal-content">
-			<h1 class="h1_mail">Tuma contacto cu Frank26</h1>
-				<form method="post" action="">
-					<fieldset class="fieldset-con-mail">
+			<h1 class="h1_mail">Tuma contacto cu {seller-name}</h1>
+			<form method="post" action="">
+				<fieldset class="fieldset-con-mail">
+					<label>Tema</label><br>
+					<input type="text" name="tema"></input><br>
 					<label for="txtarea-mail">Bo mensage</label><br>
-						<textarea id="txtarea-mail" value="">Hallo Frank26,
-
-</textarea><br>
-						<h1>Bo information di contacto:</h1><br>
-						<label>Bo e-mail</label>
-						<p>tet@bohost.com</p><br>
-						<label>Bo telefoon</label><br>
-						<input type="text" value=""></input>
-					</fieldset>
-					<input type="submit" class="submit-btn" value="Manda e-mail"></input>
-					<input type="submit" class="cancel-btn" id="cancel-btn" value="Cancela"></input>
-				</form>
-			
+					<textarea id="txtarea-mail" name="txtarea-mail">Hallo {seller-name},</textarea><br>
+					<h1>Bo information di contacto:</h1><br>
+					<label>Bo e-mail</label>
+					<p>{user-mail}</p><br>
+					<label>Bo telefoon</label><br>
+					<input type="number" name="phone" value="{user-phone}"></input>
+				</fieldset>
+				<input type="submit" name="sendMail" class="submit-btn" ></input>
+				<input type="submit" class="cancel-btn" id="cancel-btn" value="Cancela"></input>
+			</form>
 	  </div>
 </div>
 	<div id="main_content" >
 		<div class="container">
+		
 				<div class="product_view">
 					<div class="product_view_header">
-						<h1 class="h1_view">A big title</h1>
-						<span class="span_icon"><img class="icon" title="Tanto biaha mira" src="image/view.png" alt="logo"> x mira</span>
-						<span class="span_icon"><img class="icon" title="E dia e la wordo poni" src="image/desde.png" alt="logo"> desde</span>
-						<img class="fav_icon" title="Favorite" onclick="" src="image/star_gray.png">
+						<h1 class="h1_view">{title}</h1>
+						<span class="span_icon"><img class="icon" title="Tanto biaha mira" src="image/view.png" alt="logo">{count} x mira</span>
+						<span class="span_icon"><img class="icon" title="E dia e la wordo poni" src="image/desde.png" alt="logo">desde {date}</span>
+						<span class="span_icon"><img class="icon" title="Tanto biaha warda" src="image/star_gray.png" alt="logo">{fav_count} x Warda</span>
+						<div id="fav_star"><img class="fav_icon" id="fav_icon" title="{fav_title}" onclick="favProduct()" src="{fav}"></div>
 					</div>
 					<div class="product_view_image">
 						<div class="slideshow_content">
-							<img class="mySlides" onclick="onClick(this)" id="myImg" src="image/fiets.jpg">
-							<img class="mySlides" onclick="onClick(this)" id="myImg" src="image/fiets/2.jpg">
-							<img class="mySlides" onclick="onClick(this)" id="myImg" src="image/fiets/3.jpg">
-							
+							<!-- START BLOCK : IMAGE-BOX -->
+							<img class="mySlides" onclick="onClick(this)" id="myImg" src="{image-url}">
+							<!-- END BLOCK : IMAGE-BOX -->
+							<!-- START BLOCK : EMPTY-IMAGE-BOX -->
+							<img class="mySlides"  src="image/no_image.png">
+							<!-- END BLOCK : EMPTY-IMAGE-BOX -->
 							<!-- The Modal -->
 							<div id="myModal" class="modal">
 							<span class="close" id="close">&#9747;</span>
@@ -68,64 +71,112 @@
 							<div class="btn-floating" id="btn-floating-right" onclick="plusDivs(1)"></div>
 						</div>
 						<div id="product_view_prijs">
-							<h1>FL 9.999.999,99</h1>
+							<h1>{currency} {price}</h1>
 						</div>
 					</div>
 					<div class="product_view_footer">
+						<!-- START BLOCK : CONDITION -->
 						<h1>Condition</h1>
-						<P>Nobo</P><br>
+						<P>{condition}</P><br>
+						<!-- END BLOCK : CONDITION -->
+						<!-- START BLOCK : ENTREGA -->
+						<h1>Entrega</h1>
+						<P>{delivery}</P><br>
+						<!-- END BLOCK : ENTREGA -->
 						<h1>Description</h1>
-						<p> is simply dummy text of the printing and typesetting industry. 
-								Lorem Ipsum has been the industry's standard dummy text ever since</p>
+						<p>{description}</p><br>
+						<div class="fb-share-button" data-href="http://topsecret.brutalcoding.com/index.php?id=7&amp;product={product}" 
+						data-layout="button_count" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" 
+						href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ftopsecret.brutalcoding.com%2Findex.php%3Fid%3D7%26product%3D32&amp;src=sdkpreparse"></a></div>
+						<!-- <div id="fb-root"></div> -->
+						<a class="twitter-share-button"
+						href="https://twitter.com/intent/tweet?text=#BoMercado"
+						  data-size="default"></a>
+						<a data-pin-do="buttonPin" href="https://www.pinterest.com/pin/create/button/?url=http://topsecret.brutalcoding.com/index.php?id=7&amp;product={product}&media={image-url}&description={description}" data-pin-config="beside"></a>
+<script
+    type="text/javascript"
+    async defer
+    src="//assets.pinterest.com/js/pinit.js"
+></script>
+		
+<script>
+window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+ 
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+ 
+  return t;
+}(document, "script", "twitter-wjs"));
+</script>
+						
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/nl_NL/sdk.js#xfbml=1&version=v2.8";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
 					</div>
 				</div>
+				
 				<div class="contact_view">
-					<h1>Frank26</h1><br>
-					<p>Contatco preferi:</p><br>
+					<h1>{seller-name}</h1><br>
+					<p>Contacto preferi:</p><br>
+					<!-- START BLOCK : EMAIL -->
 					<button id="msg_button" >Manda un e-mail</button>
-					<P><img class="icon" src="image/phone.png" alt="logo"> 5847544</P>
+					<!-- END BLOCK : EMAIL -->
+					<!-- START BLOCK : PHONE -->
+					<P><img class="icon" src="image/phone.png" alt="phone"> 5847544</P><br>
+					<!-- END BLOCK : PHONE -->
+					<!-- START BLOCK : LOCATION -->
+					<P><img class="icon" src="image/location_map_marker.png" alt="location"> {location} </P>
+					<!-- END BLOCK : LOCATION -->
+					<!-- START BLOCK : LOGINMSG -->
+					<P>Pa tuma contacto bo mester ta login</P>
+					<!-- END BLOCK : LOGINMSG -->
+					
 				</div>
+				
+				<!-- START BLOCK : AUCTION_BOX -->
 				<div class="auction_view">
-					<h1> Findishi ta cuminsa na Fl 18.00</h1><br>
-					<form method="post" action="">
-						<input type="number" name="bid" maxlength="10" step="any" pattern="[0-9]+([,\.][0-9]+)?" class="input_action" autocomplete="off">
-						<button type="submit" value="Pone bo oferta" class="input_btn">Pone un oferta</button>
+					<h1> Findishi {currency2} {price2}</h1><br>
+					<form action="" method="post"  onsubmit="bidAuction();return false">
+						<!-- START BLOCK : TEST_AUCTION_BOX -->
+						<input type="number" name="bid" id="bid" placeholder="0.00" {style} maxlength="10" step="any" pattern="[0-9]+([,\.][0-9]+)?" class="input_action" autocomplete="off" {hide}>
+						<button type="submit" class="input_btn" name="bidButton"  >Pone un oferta</button>
+						<p style="color: red; margin-top: 20px; text-align: center;">{ERROR-MSG}</p>
+						<!-- END BLOCK : TEST_AUCTION_BOX -->
 					</form>
 				</div>
-				<div class="auction_bidder">
+				<!-- END BLOCK : AUCTION_BOX -->
+				<!-- START BLOCK : AUCTION_BID_BOX -->
+				<div class="auction_bidder" id="auction_bidder">
+				<!-- START BLOCK : AUCTION_BID -->
 					<ul>
-						<li id="auction_li">
-							<span class="auction_span" id="span_name">Hermenegildo</span>
-							<span class="auction_span" id="span_amount">FL 9.999.999.99</span>
-							<span class="auction_span" id="span_date">99-99-9999</span>
-						</li>
-						<li id="auction_li" class="auction_li">
-							<span class="auction_span" id="span_name">Iron</span>
-							<span class="auction_span" id="span_amount">FL 9.99</span>
-							<span class="auction_span" id="span_date">99-99-9999</span>
-						</li>
-						<li id="auction_li" class="auction_li">
-							<span class="auction_span" id="span_name">Jahad</span>
-							<span class="auction_span" id="span_amount">FL 9.99</span>
-							<span class="auction_span" id="span_date">99-99-9999</span>
-						</li>
-						<li id="auction_li" class="auction_li">
-							<span class="auction_span" id="span_name">Jahad</span>
-							<span class="auction_span" id="span_amount">FL 9.99</span>
-							<span class="auction_span" id="span_date">99-99-9999</span>
-						</li>
-						<li id="auction_li" class="auction_li">
-							<span class="auction_span" id="span_name">Jahad</span>
-							<span class="auction_span" id="span_amount">FL 9.99</span>
-							<span class="auction_span" id="span_date">99-99-9999</span>
+						<li id="auction_li" {line}>
+							<span class="auction_span" id="span_name">{name}</span>
+							<span class="auction_span" id="span_amount">{currency} {amount}</span>
+							<span class="auction_span" id="span_date">{date_bid}</span>
 						</li>
 					</ul>
-					<button type="submit" value="delete" class="oferta">Kita bo oferta</button>
+					<!-- END BLOCK :  AUCTION_BID -->
 				</div>
+				<!-- START BLOCK : AUCTION_BID_BOX -->
 		</div>
 		<div id="myModal" class="modal">
 		</div>
 		<script>
+		
 		
 var mailModal = document.getElementById('mail-modal');
 var cancelBtn = document.getElementById('cancel-btn');

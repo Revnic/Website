@@ -12,14 +12,14 @@ if(isset($_POST['submit_remail']))
 		
 		if($result->num_rows > 0)
 		{	
-			$row =$result->fetch_array(MYSQLI_ASSOC);
+			$row = $result->fetch_array(MYSQLI_ASSOC);
 			$id= $row['idaccount'];
 			$name = $row['name'];
-			$sql_delete = "DELETE FROM `passwordToken` WHERE `account_idaccount`= '".$id."'";
+			$sql_delete = "DELETE FROM `passwordtoken` WHERE `account_idaccount`= '".$id."'";
 			$conn->query($sql_delete);
 			
 			$key = md5(uniqid(rand()));
-			$sql = "INSERT INTO `passwordToken`(`key`, `account_idaccount`) VALUES ( '".$key."' , '".$id."')";
+			$sql = "INSERT INTO `passwordtoken`(`key`, `account_idaccount`) VALUES ( '".$key."' , '".$id."')";
 			$conn->query($sql);
 
 			$to = $mail;
@@ -93,7 +93,15 @@ if(isset($_POST['submit']))
 				$_SESSION['accountType'] = $accountType;
 				$_SESSION['idaccount'] = $idaccount;
 				
-				header("Location: index.php?id=1");
+				$date = date('Y-m-d H:i:s');
+				$ip = $_SERVER['REMOTE_ADDR'];
+				
+				$sql_insert ="INSERT INTO `logindata`(`dateTime`, `ipaddress`, `account_idaccount`) 
+				VALUES('".$date."', '".$ip."', '".$idaccount."')";
+				$conn->query($sql_insert);
+				
+				header("Location: Home");
+				
 			}
 			else
 			{

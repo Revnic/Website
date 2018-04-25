@@ -1,6 +1,6 @@
 <?php
 
 session_destroy();
-header("Location: index.php?id=1");
+header("Location: Home");
 
 ?>

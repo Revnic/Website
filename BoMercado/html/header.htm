@@ -2,26 +2,30 @@
 <html>
 <head>
 	<title>Bo Mercado</title>
+	<!-- ora bai life mester pone forward slash(/) die lanti link-->
 	<link rel="stylesheet" href="css/reset_style.css">
 	<link rel="stylesheet" href="css/main_style.css">
 	<link rel="stylesheet" href="css/slideshow.css">
 	<script src='https://www.google.com/recaptcha/api.js'></script>
 	<script src="js/dropdown.js"></script>
+	<script src="js/ajax.js"></script>
+	<!-- ora bai life mester cambie -->
+	<!-- <base href="/"> -->
 </head>
 <body>
 <!--header-->
 	<header>
-	
 		<div class="container">
-			<a href="index.php?id=1"><img id="logo" src="image/tent.png" alt="logo"></a>
+			<a href="Home"><img id="logo" src="image/tent.png" alt="logo"></a>
+			<a id="home-link" href="Home">Home</a>
 			<ul class="header_ul">
 			  <li class="header_li">{name} <a class="nav" href="{link}">{login}</a></li>
 			  <li class="dropdown">
 				<a href="javascript:void(0)" class="dropbtn" onclick="myFunction()">Bo Mercado &#9660 </a>
 				<div class="dropdown-content" id="myDropdown">
-				  <a href="index.php?id=9">Bo advertensianan</a>
-				  <a href="index.php?id=10">Bo favoritonan</a>
-				  <a href="index.php?id=8">Bo account</a>
+				  <a href="Your-advertisements">Bo advertensianan</a>
+				  <a href="Favourite">Bo favoritonan</a>
+				  <a href="Your-account">Bo account</a>
 				</div>
 			  </li>
 			</ul>

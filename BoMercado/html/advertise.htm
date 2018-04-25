@@ -34,19 +34,19 @@
 				<span class="warning">*Mester yena un titulo</span><br>
 				<!-- END BLOCK : empty_name -->
 				<!-- START BLOCK : empty_cate -->
-				<span class="warning">*Mester kies un catergoria</span><br>
+				<span class="warning">*Mester kies un categoria</span><br>
 				<!-- END BLOCK : empty_cate -->
 				<!-- START BLOCK : empty_condition -->
 				<span class="warning">*Mester kies un condition</span><br>
 				<!-- END BLOCK : empty_condition -->
 				<!-- START BLOCK : empty_description -->
-				<span class="warning">*Mester pone un description</span><br>
+				<span class="warning">*Mester pone un descripshon</span><br>
 				<!-- END BLOCK : empty_description -->
 				<!-- START BLOCK : empty_transfer -->
 				<span class="warning">*Mester pone un manera di entrega</span><br>
 				<!-- END BLOCK : empty_transfer -->
 				<!-- START BLOCK : empty_country -->
-				<span class="warning">*Mester pone bo pias</span><br>
+				<span class="warning">*Mester pone bo pais</span><br>
 				<!-- END BLOCK : empty_country -->
 				<!-- START BLOCK : empty_price -->
 				<span class="warning">*Mester kies un manera pa prijs</span><br>
@@ -71,9 +71,10 @@
 						<label for="title3">Condition</label><span class="mester"> *Mester</span><br>
 						<select name="condition" class="select_ad" id="title3">
 							<option value="">Kies un condition...</option>
-							<option value="nobo">Nobo</option>
-							<option value="tiki husa">Tiki husa</option>
-							<option value="husa">Husa</option>
+							<option value="Nobo">Nobo</option>
+							<option value="Tiki husa">Tiki husa</option>
+							<option value="Husa">Husa</option>
+							<option value="1">Irrelevante</option>
 						</select>
 					</fieldset>
 					<fieldset class="fieldset_adv">
@@ -83,17 +84,18 @@
 					</fieldset>
 					<fieldset class="fieldset_adv">
 						<legend>3. Description</legend>
-						<label for="description">Description</label><span class="mester"> *Mester</span><br>
-						<textarea id="description" name="description"rows="5" placeholder="Pone aki nan un description di bo producto." cols="50">{description}</textarea>
+						<label for="description">Descripshon</label><span class="mester"> *Mester</span><br>
+						<textarea id="description" name="description"rows="5" placeholder="Pone aki nan un descripshon di bo producto." cols="50">{description}</textarea>
 					</fieldset>
 					<fieldset class="fieldset_adv">
 						<legend>4. Buske of Mande</legend>
-						<label for="deliverd">Manera di entrega</label></span><br>
+						<label for="deliverd">Manera di entrega</label><span class="mester"> *Mester</span><br>
 						<select name="transfer" class="select_ad" id="deliverd">
 							<option value="">Kies un option...</option>
-							<option value="buske">Buske</option>
-							<option value="mande">Ta mande</option>
-							<option value="busca of mande">Busca of Mande</option>
+							<option value="Buske">Buske</option>
+							<option value="Mande">Ta mande</option>
+							<option value="Busca of mande">Busca of Mande</option>
+							<option value="1">Irrelevante</option>
 						</select>
 					</fieldset>
 					<fieldset class="fieldset_adv">
@@ -102,8 +104,8 @@
 						<input type="checkbox" name="emailcheck" class="check_reg" id="email" checked><label for="email">E-mail</label></input>
 						<input type="checkbox" name="callcheck" class="check_reg" id="yama"><label for="yama">Yama</label></input><br>
 						<label id="country">Bo pais</label></label><span class="mester"> *Mester</span><br>
-						<select class="select_reg" name="country">
-							<option value="">Kies un pais....</option>
+						<select name="country" class="select_reg" >
+							<option value="" >Kies un pais....</option>
 							<!-- START BLOCK : COUNTRY -->
 							<option value="{id_c}">{country} </option>
 							<!-- END BLOCK : COUNTRY -->
@@ -113,12 +115,13 @@
 					</fieldset>
 					<fieldset class="fieldset_adv">
 						<legend>6. Prijs</legend>
+						<input class="adv_radio" type="radio" onclick="check(this,1)" name="radio" value="gratis" id="ask_prijs"><label for="ask_prijs" class="rad_title">Gratis</label><div class="tooltip"><span class="tooltiptext">E producto ta pornada.</span></div></input><br><br>
 						<input class="adv_radio" type="radio" onclick="check(this,1)" name="radio" value="puntra" id="ask_prijs"><label for="ask_prijs" class="rad_title">Punrta pa prijs</label><div class="tooltip"><span class="tooltiptext">E persona mester puntra pa prijs.</span></div></input><br><br>
 						<input class="adv_radio" type="radio" onclick="check(this,2)" name="radio" value="exacto" id="ex_prijs"><label for="ex_prijs" class="rad_title">Prijs exacto</label></input><div class="tooltip"><span class="tooltiptext">E prijs cu bo kier haña pa bo producto.</span></div>
-						<input type="number" id="ex_prijs_nr"  name="ex_prijs_nr" class="input_number" step="any"></input><br>
+						<input type="number" id="ex_prijs_nr" placeholder="0.00" name="ex_prijs_nr" class="input_number" step="any"></input><br>
 						<input class="adv_radio" type="radio" onclick="check(this,3)" name="radio" value="findishi" id="offer"><label for="offer" class="rad_title">Findishi</label><div class="tooltip"><span class="tooltiptext">Bo kier pa e personanan pone un oferta riba bo producto.</span></div></input><br><br>
 						<input class="adv_radio" type="radio" onclick="check(this,4)" name="radio" value="findishi_prijs" id="of_prijs"><label for="of_prijs" class="rad_title">Findishi ta cuminsa na</label><div class="tooltip"><span class="tooltiptext">Bo kier pa e oferta cuminsa na e prijs cu bo kier.</span></div></input> 
-						<input type="number" id="offer_prijs_nr" name="offer_prijs_nr" class="input_number" step="any"></input><br>
+						<input type="number" id="offer_prijs_nr" placeholder="0.00" name="offer_prijs_nr" class="input_number" step="any"></input><br>
 					</fieldset>
 					<input type="submit" name="submit" class="btn_adv"></input>
 				</form>

@@ -18,19 +18,19 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 		$row = $result->fetch_array(MYSQLI_ASSOC);
 		$id = $row['idaccount'];
 		
-		$sql_check = "SELECT * FROM `passwordToken` WHERE `account_idaccount`='".$id."'";
+		$sql_check = "SELECT * FROM `passwordtoken` WHERE `account_idaccount`='".$id."'";
 		$result = $conn->query($sql_check);
 		
 		$key = md5(uniqid(rand()));
 		
 		if($result->num_rows > 0)
 		{
-			$sql_update = "UPDATE `passwordToken` SET `key`='".$key."' WHERE `account_idaccount`='".$id."'";
+			$sql_update = "UPDATE `passwordtoken` SET `key`='".$key."' WHERE `account_idaccount`='".$id."'";
 			$conn->query($sql_update);
 		}
 		else
 		{
-			$sql_insert = "INSERT INTO `passwordToken`(`key`, `account_idaccount`) VALUES ( '".$key."' , '".$id."')";
+			$sql_insert = "INSERT INTO `passwordtoken`(`key`, `account_idaccount`) VALUES ( '".$key."' , '".$id."')";
 			$conn->query($sql_insert);
 		}
 		
@@ -46,7 +46,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 				<table width='700' style='border:1px solid #ea9999;padding: 20px;'>
 					<tr>
 						<td>
-							<h1 style='color: #b30000;'>Resest password</h1>
+							<h1 style='color: #b30000;'>Reset password</h1>
 							<p>Hello,<br>
 							<br>
 							Click the link below to reset your password<br>

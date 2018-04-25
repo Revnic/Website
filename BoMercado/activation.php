@@ -6,7 +6,7 @@ $content->prepare();
 
 $verify = $_GET["verify"];
 	
-$sql_verify = "SELECT `account_idaccount` FROM `passwordToken` WHERE `key`='".$verify."'";
+$sql_verify = "SELECT `account_idaccount` FROM `passwordtoken` WHERE `key`='".$verify."'";
 $result = $conn->query($sql_verify);
 
 if($_GET["verify"]!= "" && $result->num_rows > 0)
@@ -17,7 +17,7 @@ if($_GET["verify"]!= "" && $result->num_rows > 0)
 	
 	if($conn->query($sql_active) === TRUE)
 	{
-		$sql_delete = "DELETE FROM `passwordToken` WHERE `account_idaccount`= '".$id."'";
+		$sql_delete = "DELETE FROM `passwordtoken` WHERE `account_idaccount`= '".$id."'";
 		$conn->query($sql_delete);
 		$content->newBlock("KLA");
 		mysqli_close($conn);

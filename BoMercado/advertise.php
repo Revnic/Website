@@ -1,6 +1,7 @@
 <?php
 include_once("includes/class.TemplatePower.inc.php");
 include('checkImage.php');
+include_once("function/resize.php");
 
 $content= new TemplatePower("./html/advertise.htm");
 $content->prepare();
@@ -59,14 +60,13 @@ if(!empty($idaccount))
 	
 	if($_SERVER['REQUEST_METHOD'] == 'POST')
 	{
-		
 		if(empty($_POST['titulo']))
 		{
 			$upload = 0;
 			$emptyName = 1;
 		}
 		
-		if(empty($_POST['category']))
+		if(empty($_POST['category']) || $_POST['category'] == "")
 		{
 			$upload = 0;
 			$emptyCategory = 1;
@@ -114,10 +114,12 @@ if(!empty($idaccount))
 			$emptyPriceEx = 1;
 		}
 		
-		$target_dir = "userImages/".$name."/";
+		$date = date("dmY_His");
+		
+		$target_dir = "userImages/".$name."/".$date."/";
 
 		if(!file_exists($target_dir)){
-			mkdir($target_dir, 0777, true);
+			mkdir($target_dir, 0755, true);
 		}
 
 		$imageFileType= array();
@@ -254,6 +256,12 @@ if(!empty($idaccount))
 				$amount = $_POST['offer_prijs_nr'];
 			}
 			
+			$free = False;
+			if($_POST['radio'] == "gratis")
+			{
+				$free = True;
+			}
+			
 			$auction = 0;
 			if($_POST['radio'] == "findishi" || $_POST['radio'] == "findishi_prijs" )
 			{
@@ -274,9 +282,9 @@ if(!empty($idaccount))
 			
 			
 			$sql_product = "INSERT INTO `product`(`title`, `condition`, `description`, `price`, `date`, 
-			`auction`, `delivery`, `show_mail`, `show_phone`, `category_idcategory`, `country_idcountry`, 
+			`free`,`auction`, `delivery`, `show_mail`, `show_phone`, `category_idcategory`, `country_idcountry`, 
 			`account_idaccount`) VALUES ('".$_POST['titulo']."','".$_POST['condition']."','".$_POST['description']."',
-			'".$amount."','".$date."','".$auction."','".$_POST['transfer']."','".$emailcheck."',
+			'".$amount."','".$date."','".$free."','".$auction."','".$_POST['transfer']."','".$emailcheck."',
 			'".$callcheck."','".$_POST['category']."','".$_POST['country']."','".$idaccount."')";
 			
 			if($conn->query($sql_product) === true)
@@ -284,7 +292,7 @@ if(!empty($idaccount))
 				//get last id
 				$product_id = $conn->insert_id;
 				
-				//check telefoon
+				//check phone
 				if(!empty($_POST['phone']))
 				{
 					$sql_phone= "SELECT  `phonenr` FROM `account` WHERE `idaccount` = '".$idaccount."'";
@@ -299,7 +307,7 @@ if(!empty($idaccount))
 				
 				}
 				
-				// check si tin action
+				// check for auction
 				if($auction == 1)
 				{
 					$sql_auction = "INSERT INTO `auction`(`product_idproduct`) VALUES ('".$product_id."')";
@@ -335,11 +343,11 @@ if(!empty($idaccount))
 				
 				// redirect page with timer
 				$content->newBlock("DONE");
-				header("refresh:3; url=index.php?id=1");
+				header("refresh:3; url=Home");
 			}
 			else
 			{
-				echo "Error: " . $sql_product . "<br>" . $conn->error;
+				//echo "Error: " . $sql_product . "<br>" . $conn->error;
 			}
 			
 			$conn->close();
@@ -349,7 +357,7 @@ if(!empty($idaccount))
 }
 else
 {
-	header("Location: index.php?id=2");
+	header("Location: Log-in");
 }
 
 

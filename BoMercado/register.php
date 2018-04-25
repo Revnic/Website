@@ -234,7 +234,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 		{
 			$id = mysqli_insert_id($conn);
 			
-			$sql_token = "INSERT INTO `passwordToken`(`key`, `account_idaccount`) VALUES ( '".$key."' , '".$id."')";
+			$sql_token = "INSERT INTO `passwordtoken`(`key`, `account_idaccount`) VALUES ( '".$key."' , '".$id."')";
 			
 			if($conn->query($sql_token) === TRUE)
 			{
@@ -282,7 +282,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 				$_SESSION["mail"] = $email;
 				$_SESSION["name"] = $name;
 				
-				header("Location: index.php?id=11");
+				header("Location: Confirmation");
 			}
 			else
 			{

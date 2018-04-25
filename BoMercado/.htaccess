@@ -1,0 +1,33 @@
+Options -Indexes
+
+RewriteCond ${REQUEST_URI} ^.+$
+RewriteCond %{REQUEST_FILENAME} \.(gif|jpe?g|png|js|css|swf|php|ico|txt|pdf|xml)$ [OR]
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d [OR]
+RewriteCond %{REQUEST_FILENAME} -l
+RewriteRule ^ - [L]
+
+RewriteEngine on # Turn rewrite engine on
+
+# NC make the rule non case sensitive
+# L makes this the last rule that this specific condition will match
+
+RewriteRule ^Home/?$ index.php?id=1 [NC,L]
+RewriteRule ^Log-in/?$ index.php?id=2 [NC,L]
+RewriteRule ^forgot-password/?$ index.php?id=3 [NC,L]
+RewriteRule ^Registration/?$ index.php?id=4 [NC,L]
+RewriteRule ^advertisement/?$ index.php?id=5 [NC,L]
+RewriteRule ^Error-404/?$ index.php?id=404 [NC,L]
+RewriteRule ^Your-account/?$ index.php?id=8 [NC,L]
+RewriteRule ^Your-advertisements/?$ index.php?id=9 [NC,L]
+RewriteRule ^Favourite/?$ index.php?id=10 [NC,L]
+RewriteRule ^Confirmation/?$ index.php?id=11 [NC,L]
+RewriteRule ^Activation/?$ index.php?id=12 [NC,L]
+RewriteRule ^Reset-password/?$ index.php?id=13 [NC,L]
+
+RewriteRule ^Page/([a-zA-Z0-9]+)/Category/([a-zA-Z0-9]+)/?$ index.php?id=$1&category=$2 [NC,L]
+
+
+ErrorDocument 403 /403.shtml
+ErrorDocument 404 /404.shtml
+ErrorDocument 500 /500.shtml
